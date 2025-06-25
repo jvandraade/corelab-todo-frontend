@@ -1,0 +1,49 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1.5rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .color-tag {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .task-title {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #111827;
+  }
+
+  .favorite-btn {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &.active {
+      color: #facc15; // amarelo estrela
+    }
+
+    &:hover {
+      color: #f59e0b;
+    }
+  }
+}
