@@ -42,13 +42,13 @@ Para criar uma build otimizada para produção:
 
 ### Estrutura do Projeto
 
-src/
-├── components/         # Componentes reutilizáveis (Header, TaskList, FilterBar, etc)
-├── pages/              # Páginas e views (uso futuro)
-├── services/           # Comunicação com API (fetch/axios)
-├── styles/             # Estilos globais e variáveis Sass
-├── tests/              # Testes unitários
-└── App.tsx             # Componente raiz
+- src/
+- ├── components/         # Componentes reutilizáveis (Header, TaskList, FilterBar, etc)
+- ├── pages/              # Páginas e views (uso futuro)
+- ├── services/           # Comunicação com API (fetch/axios)
+- ├── styles/             # Estilos globais e variáveis Sass
+- ├── tests/              # Testes unitários
+- └── App.tsx             # Componente raiz
 
 ---
 
