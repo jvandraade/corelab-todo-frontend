@@ -1,69 +1,81 @@
-# React + TypeScript + Vite
+To-Do List - Frontend & Backend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FRONTEND
+Descrição: Este é o frontend da aplicação To-Do List, construída em React com TypeScript. O foco principal é oferecer uma interface moderna, responsiva e amigável para gerenciar tarefas, com funcionalidades como marcar tarefas favoritas, filtrar por cor, editar e excluir tarefas.
 
-Currently, two official plugins are available:
+Tecnologias e Frameworks
+React 18.x (React TS)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+TypeScript
 
-## Expanding the ESLint configuration
+Sass (para estilização)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+ESLint e Prettier para padronização de código
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+React Testing Library + Jest para testes unitários
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Instalação
+Clone o repositório:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+git clone <url-do-repositorio-frontend>
+Instale as dependências:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Rodar o projeto em ambiente de desenvolvimento:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+npm start
+A aplicação rodará localmente em http://localhost:3000
+
+Para gerar a build de produção:
+
+bash
+
+npm run build
+
+Organização das pastas
+
+src/
+├── components/           # Componentes reutilizáveis (TaskList, Header, FilterBar, etc)
+├── pages/                # Páginas (separação futura possível)
+├── services/             # Serviços de integração com API (fetch, axios)
+├── styles/               # Arquivos de estilo global e variáveis Sass
+├── tests/                # Testes unitários
+└── App.tsx               # Componente principal
+
+Funcionalidades Implementadas
+CRUD completo de tarefas via integração com backend
+
+Marcar e desmarcar tarefas como favoritas
+
+Filtrar tarefas por cor e favoritas
+
+Adicionar, editar e deletar tarefas na interface
+
+Layout responsivo e acessível, com design mobile first
+
+Validações básicas de entrada
+
+Feedback visual para ações (loading, erros)
+
+Testes
+Para rodar os testes unitários:
+
+bash
+npm test
+Portas e URLs importantes
+Frontend: http://localhost:3000
+
+Backend (para integração): http://localhost:4000 (configurável)
+
+Conteúdos adicionais
+Configuração ESLint + Prettier para manter padrão de código
+
+Hooks personalizados para gerenciar estado e filtros
+
+Documentação do código com comentários claros
+
+Configuração para pull requests detalhadas
+
+Como contribuir
+Por favor, abra issues ou pull requests para melhorias, bugs ou dúvidas.
