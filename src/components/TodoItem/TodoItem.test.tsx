@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { TodoItem } from './TodoItem';
+import { TaskItem } from './TaskItem';
 import { vi } from 'vitest';
 
-describe('TodoItem', () => {
-  const mockTodo = {
+describe('TaskItem', () => {
+  const mockTask = {
     id: '1',
     title: 'Estudar React',
     color: 'blue',
@@ -13,8 +13,8 @@ describe('TodoItem', () => {
 
   it('exibe o título da tarefa', () => {
     render(
-      <TodoItem
-        task={mockTodo}
+      <TaskItem
+        task={mockTask}
         onToggleFavorite={() => {}}
         onDelete={() => {}}
         onEdit={() => {}}
@@ -28,8 +28,8 @@ describe('TodoItem', () => {
     const toggleFavorite = vi.fn();
 
     render(
-      <TodoItem
-        task={mockTodo}
+      <TaskItem
+        task={mockTask}
         onToggleFavorite={toggleFavorite}
         onDelete={() => {}}
         onEdit={() => {}}

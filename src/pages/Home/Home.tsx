@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import AddTask from '../../components/AddTask/AddTask';
 import FilterBar from '../../components/FilterBar/FilterBar';
-import TaskList from '../../components/TaskList/TaskList';
+import TaskTaskItemfrom '../../components/TaskList/TaskList';
 import type { Task } from '../../types/task';
 import './Home.scss';
+import { TaskItem } from '../../components/TaskItem/TaskItem';
 
 const Home: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -25,15 +26,15 @@ const Home: React.FC = () => {
   const toggleFavorite = (id: string) => {
     setTasks((prev) =>
       prev.map((task) =>
-        task.id === id ? { ...task, favorite: !task.favorite } : task
-      )
+        task.id === id ? { ...task, favorite: !task.favorite } : task,
+      ),
     );
   };
 
-  // Atualiza a cor da tarefa 
+  // Atualiza a cor da tarefa
   const updateTaskColor = (id: string, color: string) => {
     setTasks((prev) =>
-      prev.map((task) => (task.id === id ? { ...task, color } : task))
+      prev.map((task) => (task.id === id ? { ...task, color } : task)),
     );
   };
 
@@ -44,19 +45,38 @@ const Home: React.FC = () => {
     return true;
   });
 
+  // Edita uma tarefa
+  const handleEditTask = (id: string, newTitle: string) => {
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === id ? { ...task, title: newTitle } : task,
+      ),
+    );
+  };
+
+  // Deletar uma tarefa
+  const handleDeleteTask = (id: string) => {
+    setTasks((prev) => prev.filter((task) => task.id !== id));
+  };
+
   return (
     <div className="home-container">
-      <Header/>
-      <AddTask 
-        onAdd={addTask} 
-        updateTaskColor={updateTaskColor}/>
+      <Header />
+      <AddTask onAdd={addTask} updateTaskColor={updateTaskColor} />
       <FilterBar
         showOnlyFavorites={filterFavorite}
         onToggleFavorites={() => setFilterFavorite(!filterFavorite)}
         selectedColor={filterColor}
         onColorFilter={(color) => setFilterColor(color)}
-/>
-      <TaskList tasks={filteredTasks} onToggleFavorite={toggleFavorite} />
+      />
+      <TaskItem
+        task={tasks[0]}
+        onToggleFavorite={toggleFavorite}
+        onEdit={handleEditTask}
+        onDelete={handleDeleteTask}
+      />
+
+      <TaskTaskItemtasks={filteredTasks} onToggleFavorite={toggleFavorite} />
     </div>
   );
 };

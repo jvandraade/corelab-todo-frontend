@@ -36,12 +36,12 @@ const TaskForm: React.FC<TaskFormProps> = ({ addTask }) => {
         type="text"
         placeholder="Adicione uma nova tarefa"
         value={text}
-        onChange={e => setText(e.target.value)}
+        onChange={(e) => setText(e.target.value)}
         maxLength={100}
       />
 
       <div className="color-picker">
-        {COLORS.map(color => (
+        {COLORS.map((color) => (
           <button
             key={color}
             type="button"

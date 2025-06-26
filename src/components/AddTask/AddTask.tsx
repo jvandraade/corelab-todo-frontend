@@ -16,12 +16,18 @@ const AddTask: React.FC<Props> = ({ onAdd }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim()) return;
-    onAdd?({ title: title.trim(), color: selectedColor }):
+
+    if (onAdd) {
+      onAdd({ title: title.trim(), color: selectedColor });
+    }
+
     setTitle('');
   };
 
   if (updateTaskColor) {
-    onAdd?({ title: title.trim(), color: selectedColor }):
+    if (onAdd) {
+      onAdd({ title: title.trim(), color: selectedColor });
+    }
     setUpdateTaskColor(false);
   }
 

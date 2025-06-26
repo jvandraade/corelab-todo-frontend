@@ -1,17 +1,17 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { TodoItem } from './TodoItem/TodoItem';
+import { TaskItem } from './TaskItem/TaskItem';
 import { vi } from 'vitest';
 
-describe('TodoItem', () => {
-  const mockTodo = { id: '1', title: 'Tarefa antiga', color: 'red', favorite: false };
+describe('TaskItem', () => {
+  const mockTask = { id: '1', title: 'Tarefa antiga', color: 'red', favorite: false };
   const onToggleFavorite = vi.fn();
   const onDelete = vi.fn();
 
   it('exibe o valor atual no input', () => {
     render(
-        <TodoItem 
-            task={mockTodo} 
+        <TaskItem 
+            task={mockTask} 
             onEdit={() => {}}
             onToggleFavorite={onToggleFavorite} 
             onDelete={onDelete}
@@ -21,8 +21,8 @@ describe('TodoItem', () => {
 
   it('chama onEdit com o novo texto ao salvar', () => {
     const onEdit = vi.fn();
-    render(<TodoItem 
-        task={mockTodo} 
+    render(<TaskItem 
+        task={mockTask} 
         onEdit={onEdit} 
         onToggleFavorite={onToggleFavorite} 
         onDelete={onDelete}
@@ -39,8 +39,8 @@ describe('TodoItem', () => {
 
   it('não chama onEdit ao clicar em cancelar', () => {
     const onEdit = vi.fn();
-    render(<TodoItem 
-        task={mockTodo} 
+    render(<TaskItem 
+        task={mockTask} 
         onEdit={onEdit} 
         onToggleFavorite={onToggleFavorite} 
         onDelete={onDelete}

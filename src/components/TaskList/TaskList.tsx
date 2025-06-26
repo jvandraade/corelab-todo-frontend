@@ -9,7 +9,9 @@ type Props = {
 };
 
 const TaskList: React.FC<Props> = ({ tasks, onToggleFavorite }) => {
-  const sortedTasks = [...tasks].sort((a, b) => Number(b.favorite) - Number(a.favorite));
+  const sortedTasks = [...tasks].sort(
+    (a, b) => Number(b.favorite) - Number(a.favorite),
+  );
 
   return (
     <div className="task-list">
@@ -22,7 +24,10 @@ const TaskList: React.FC<Props> = ({ tasks, onToggleFavorite }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
           >
-            <div className="color-tag" style={{ backgroundColor: task.color }} />
+            <div
+              className="color-tag"
+              style={{ backgroundColor: task.color }}
+            />
             <span className="task-title">{task.title}</span>
             <button
               className={`favorite-btn ${task.favorite ? 'active' : ''}`}

@@ -1,4 +1,4 @@
-.todo-item {
+.Task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +15,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
-  .todo-title {
+  .Task-title {
     font-size: 1rem;
     font-weight: 500;
     flex: 1;

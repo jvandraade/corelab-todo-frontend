@@ -14,7 +14,7 @@ const FilterBar: React.FC<Props> = ({
   selectedColor,
   showOnlyFavorites,
   onColorFilter,
-  onToggleFavorites
+  onToggleFavorites,
 }) => {
   return (
     <div className="filter-bar">
@@ -24,7 +24,9 @@ const FilterBar: React.FC<Props> = ({
             key={color}
             className={`tag ${selectedColor === color ? 'active' : ''}`}
             style={{ backgroundColor: color }}
-            onClick={() => onColorFilter(selectedColor === color ? null : color)}
+            onClick={() =>
+              onColorFilter(selectedColor === color ? null : color)
+            }
           />
         ))}
       </div>
@@ -32,7 +34,7 @@ const FilterBar: React.FC<Props> = ({
         className={`favorites-toggle ${showOnlyFavorites ? 'active' : ''}`}
         onClick={onToggleFavorites}
       >
-        {showOnlyFavorites ? 'Mostrar todos' : 'Só favoritos'}
+        {showOnlyFavorites ? 'Mostrar Tasks' : 'Só favoritos'}
       </button>
     </div>
   );

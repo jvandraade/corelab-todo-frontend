@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import FilterBar from './components/FilterBar/FilterBar';
 import TaskForm from './components/TaskForm/TaskForm';
-import TaskList from './components/TaskList/TaskList';
+import TaskTaskItemfrom './components/TaskList/TaskList';
 import type { Task } from './types/task';
 
 const App: React.FC = () => {
@@ -15,18 +15,20 @@ const App: React.FC = () => {
 
   // Função para adicionar nova tarefa
   const addTask = (task: Task) => {
-    setTasks(prev => [...prev, task]);
+    setTasks((prev) => [...prev, task]);
   };
 
   // Alternar favorito
   const toggleFavorite = (id: string) => {
-    setTasks(prev =>
-      prev.map(task => (task.id === id ? { ...task, favorite: !task.favorite } : task))
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === id ? { ...task, favorite: !task.favorite } : task,
+      ),
     );
   };
 
   // Filtrar tarefas conforme filtros ativos
-  const filteredTasks = tasks.filter(task => {
+  const filteredTasks = tasks.filter((task) => {
     if (filterFavorites && !task.favorite) return false;
     if (filterColor && task.color !== filterColor) return false;
     return true;
@@ -34,15 +36,15 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      <Header/>
+      <Header />
       <FilterBar
         showOnlyFavorites={filterFavorites}
         onToggleFavorites={() => setFilterFavorites(!filterFavorites)}
         selectedColor={filterColor}
         onColorFilter={(color) => setFilterColor(color)}
-        />
-        <TaskForm addTask={addTask} />
-        <TaskList tasks={filteredTasks} onToggleFavorite={toggleFavorite} />
+      />
+      <TaskForm addTask={addTask} />
+      <TaskTaskItemtasks={filteredTasks} onToggleFavorite={toggleFavorite} />
     </div>
   );
 };

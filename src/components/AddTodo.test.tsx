@@ -1,13 +1,13 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { TodoItem } from './TodoItem/TodoItem';
+import { TaskItem } from './TaskItem/TaskItem';
 import { vi } from 'vitest';
 
-describe('TodoItem', () => {
+describe('TaskItem', () => {
   it('chama onAdd com o texto digitado quando o formulário é submetido', () => {
     const onAdd = vi.fn();
     render(
-        <TodoItem 
+        <TaskItem 
             task={{ id: '1', title: '', color: '', favorite: false }}
             onToggleFavorite={() => {}}
             onEdit={() => {}}
@@ -26,7 +26,7 @@ describe('TodoItem', () => {
   it('não chama onAdd se o input estiver vazio', () => {
     const onAdd = vi.fn();
     render(
-        <TodoItem 
+        <TaskItem 
             task={{ id: '1', title: '', color: '', favorite: false }}
             onToggleFavorite={() => {}}
             onEdit={() => {}}
