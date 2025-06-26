@@ -1,81 +1,88 @@
-To-Do List - Frontend & Backend
+# To-Do List - Frontend & Backend
 
-FRONTEND
-Descrição: Este é o frontend da aplicação To-Do List, construída em React com TypeScript. O foco principal é oferecer uma interface moderna, responsiva e amigável para gerenciar tarefas, com funcionalidades como marcar tarefas favoritas, filtrar por cor, editar e excluir tarefas.
+---
 
-Tecnologias e Frameworks
-React 18.x (React TS)
+## 🚀 Frontend
 
-TypeScript
+### Descrição
 
-Sass (para estilização)
+Este é o frontend da aplicação **To-Do List**, construído com **React** e **TypeScript**. A interface foi projetada para ser moderna, responsiva e intuitiva, focando em uma excelente experiência de usuário (UI/UX).  
+Permite gerenciar tarefas com funcionalidades de criação, edição, exclusão, marcação como favorito, além de filtragem por cor e favoritos.
 
-ESLint e Prettier para padronização de código
+---
 
-React Testing Library + Jest para testes unitários
+### Tecnologias e Ferramentas Utilizadas
 
-Instalação
-Clone o repositório:
+- React 18.x (com TypeScript)
+- Sass (pré-processador CSS)
+- ESLint e Prettier (padronização de código)
+- React Testing Library + Jest (testes unitários)
 
-git clone <url-do-repositorio-frontend>
+---
+
+### Como rodar o projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone <URL_DO_REPOSITORIO_FRONTEND>
+
 Instale as dependências:
 
-npm install
+- npm install
+- Inicie o servidor de desenvolvimento:
+- npm start
+Acesse a aplicação em seu navegador:
+http://localhost:3000
 
-Rodar o projeto em ambiente de desenvolvimento:
+Para criar uma build otimizada para produção:
 
-npm start
-A aplicação rodará localmente em http://localhost:3000
+- npm run build
 
-Para gerar a build de produção:
+---
 
-bash
-
-npm run build
-
-Organização das pastas
+### Estrutura do Projeto
 
 src/
-├── components/           # Componentes reutilizáveis (TaskList, Header, FilterBar, etc)
-├── pages/                # Páginas (separação futura possível)
-├── services/             # Serviços de integração com API (fetch, axios)
-├── styles/               # Arquivos de estilo global e variáveis Sass
-├── tests/                # Testes unitários
-└── App.tsx               # Componente principal
+├── components/         # Componentes reutilizáveis (Header, TaskList, FilterBar, etc)
+├── pages/              # Páginas e views (uso futuro)
+├── services/           # Comunicação com API (fetch/axios)
+├── styles/             # Estilos globais e variáveis Sass
+├── tests/              # Testes unitários
+└── App.tsx             # Componente raiz
 
-Funcionalidades Implementadas
-CRUD completo de tarefas via integração com backend
+---
 
-Marcar e desmarcar tarefas como favoritas
+### Funcionalidades Implementadas
 
-Filtrar tarefas por cor e favoritas
+- CRUD completo para tarefas via API
+- Marcar/desmarcar tarefas como favoritas
+- Definir cor personalizada para cada tarefa
+- Filtros por cor e favoritos
+- Layout responsivo (mobile first)
+- Validações básicas nas entradas de dados
+- Feedback visual para carregamento e erros
+- Componentização organizada para fácil manutenção
 
-Adicionar, editar e deletar tarefas na interface
+---
 
-Layout responsivo e acessível, com design mobile first
+### Testes
 
-Validações básicas de entrada
+Execute os testes unitários com:
 
-Feedback visual para ações (loading, erros)
+- npm test
 
-Testes
-Para rodar os testes unitários:
+---
 
-bash
-npm test
-Portas e URLs importantes
-Frontend: http://localhost:3000
+### Configurações importantes:
 
-Backend (para integração): http://localhost:4000 (configurável)
+- A aplicação roda na porta 3000 por padrão
+- A URL da API backend deve estar configurada em src/services/api.ts (ex: http://localhost:4000)
 
-Conteúdos adicionais
-Configuração ESLint + Prettier para manter padrão de código
+---
 
-Hooks personalizados para gerenciar estado e filtros
+### Boas práticas aplicadas
 
-Documentação do código com comentários claros
-
-Configuração para pull requests detalhadas
-
-Como contribuir
-Por favor, abra issues ou pull requests para melhorias, bugs ou dúvidas.
+- ESLint + Prettier configurados para padronização do código
+- Hooks personalizados para lógica de filtros e estado
+- Código documentado com comentários claros
+- Pull requests detalhados com explicações
